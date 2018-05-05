@@ -1,0 +1,52 @@
+.ic-tag{
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #FFA000;
+    text-align: center;
+    border-radius: 2px;
+    display: inline-block;
+    border-radius: 2px;
+    text-align: center;
+    padding: 4px 10px;
+    min-width: 48px;
+    line-height: 1;
+    margin-left: 10px;
+    .ic-tag-inner{
+        max-width: 92px;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+        transform: translateY(1px);
+    }
+    .ic-tag-icon{
+        padding-left: 6px;
+        display: inline-block;
+        transform: translateY(1px);
+        cursor: pointer;
+
+    }
+    &.ic-close-tag{
+        padding: 2px 10px;
+        border:1px solid #ddd;
+        color:#333 !important;
+        background: #fff !important;
+        cursor: pointer;
+        transform: translateY(1px);
+        .ic-tag-inner{
+            transform: translateY(0px);
+        }
+        i{
+            color:#999;
+        }
+        &:hover{
+            background: rgba(59,153,255,0.08) !important;
+            border: 1px solid #3B99FF;
+            color: #3B99FF !important;
+            i{
+                color: #3B99FF;
+            }
+        }
+    }
+}
+

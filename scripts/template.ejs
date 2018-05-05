@@ -1,0 +1,5 @@
+<%data.forEach(({name},i)=>{%>import Component<%=i%> from './packages/<%=name%>/examples';
+import ReadMe<%=i%> from './packages/<%=name%>/README.md';
+<%})%>
+
+export default [<%-data.map(({name,title},i)=>`{name:"${name}",title:"${title}",ExampleComponent:Component${i},ReadMe:ReadMe${i}}`).join(',')%>];
