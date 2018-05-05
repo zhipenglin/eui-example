@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import hljs from 'highlight'
-import 'highlight/styles/github.css'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/github.css'
 
 class CodeBlock extends React.PureComponent {
     constructor(props) {

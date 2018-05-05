@@ -3,7 +3,7 @@ import logo from './logo.gif';
 import './App.css';
 import componentArray from './componentArray'
 import Markdown from './components/Markdown'
-import {HashRouter, Route, Redirect} from 'react-router-dom'
+import {HashRouter, Route, Redirect,Switch} from 'react-router-dom'
 import LeftMenu from './LeftMenu'
 
 class App extends Component {
@@ -17,13 +17,15 @@ class App extends Component {
                     </header>
                     <div className="App-content">
                         <Route><LeftMenu/></Route>
-                        {componentArray.map(({name, title, ExampleComponent, ReadMe}) => <Route
-                            path={`/components/${name}`} exact key={name} render={() => <div>
-                            <Markdown>{ReadMe}</Markdown>
-                            <h3>Example</h3>
-                            <ExampleComponent/>
-                        </div>}/>)}
-                        <Redirect to={`/components/${componentArray[0].name}`}/>
+                        <Switch>
+                            {componentArray.map(({name, title, ExampleComponent, ReadMe}) => <Route
+                                path={`/components/${name}`} exact key={name} render={() => <div>
+                                <Markdown>{ReadMe}</Markdown>
+                                <h3>Example</h3>
+                                <ExampleComponent/>
+                            </div>}/>)}
+                            <Redirect to={`/components/${componentArray[0].name}`}/>
+                        </Switch>
                     </div>
                     <footer className="App-footer">
                         上海逸橙信息科技有限公司 Copyright ©
