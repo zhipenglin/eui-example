@@ -1,6 +1,8 @@
 # eui-example
 
-> 用来收录和演示eui组件的项目
+用来收录和演示eui组件的项目
+
+[正式收录预览地址](https://zhipenglin.github.io/eui-example);
 
 1. 添加收录组件到列表
 
