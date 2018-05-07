@@ -5,7 +5,7 @@ tag component for ifchange
 
 标签选择器分为两类，一类是关键词标签：标签的颜色（color：必须是16进制）；第二类是筛选标签：关闭属性boolean值（closable：false or true）；例子如下：
 
-````js
+````
 import IcTag from 'ic-tag'
 
 <IcTag color = "#ccc">关键词标签</IcTag>       // 关键词标签

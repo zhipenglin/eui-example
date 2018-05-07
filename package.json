@@ -2,7 +2,7 @@
   "name": "eui-exmple",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://linzhipeng.github.io/eui-example",
+  "homepage": "https://zhipenglin.github.io/eui-example",
   "dependencies": {
     "classnames": "^2.2.5",
     "ejs": "^2.5.9",
@@ -18,9 +18,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-app-rewired start",
-    "build-project":"react-app-rewired build",
-    "build-async":"node ./scripts/build.js",
-    "build": "npm-run-all build-async build-project",
+    "build-project": "react-app-rewired build",
+    "build": "node ./scripts/build.js&&react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject"
   },

@@ -5,7 +5,7 @@ iconfont for ifchange
 
 通过 font 和 svg 来实现单色或彩色的图标，所有的图标都可以在 **字体** 中找到；单色图标使用时只需复制 `icon-` 后面的字符串，添加到 `Icon` 组件的 `type` 属性上即可；彩色图标使用时必须传入isColor；例子如下：
 
-````js
+````
 
 import IcIcon from 'ic-iconfont'
 
