@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import logo from './logo.gif';
 import './App.css';
 import componentArray from './componentArray'
-import Markdown from './components/Markdown'
+import Markdown from 'ic-markdown'
 import {HashRouter, Route, Redirect,Switch} from 'react-router-dom'
 import LeftMenu from './LeftMenu'
 
