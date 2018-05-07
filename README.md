@@ -1,4 +1,4 @@
-# eui-exmple
+# eui-example
 
 > 用来收录和演示eui组件的项目
 
