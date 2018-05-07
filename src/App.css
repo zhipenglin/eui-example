@@ -1,6 +1,13 @@
 .App{
   background: #f7f7f7;
 }
+
+.App section{
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+
 .App-header{
   text-align: center;
 }

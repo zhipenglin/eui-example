@@ -1,6 +1,6 @@
 {
   "name": "ic-iconfont",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "iconfont for ifchange",
   "main": "dist/index.js",
   "scripts": {

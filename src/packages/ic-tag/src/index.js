@@ -62,7 +62,7 @@ class icBasicTag extends PureComponent {
             <Fragment>
                 {this.state.showTag?<div {...args} className={classnames("ic-tag",className,{"ic-close-tag":closable})} style={{background:newColor,color:color,...style}}>
                     <span className="ic-tag-inner">{children}</span>
-                    {closable?<IcIcon className="ic-tag-icon" type="close_small" size={15} onClick={this.handleTagClose}></IcIcon>:null}
+                    {closable?<IcIcon className="ic-tag-icon" type="close_small" size={15}  onClick={this.handleTagClose}></IcIcon>:null}
                 </div>:null}
             </Fragment>
         );

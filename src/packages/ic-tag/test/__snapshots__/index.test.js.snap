@@ -1,28 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`five 1`] = `
+exports[`关键词标签 1`] = `
 Array [
   <div
-    className="ic-tag ic-tag-wrapper ic-close-tag"
+    className="ic-tag ic-tag-wrapper"
     onClose={[Function]}
     style={
       Object {
-        "background": "RGB(255,160,0,0.08)",
-        "color": "#FFA000",
+        "background": "RGB(17,170,187,0.08)",
+        "color": "#11AABB",
       }
     }
   >
     <span
       className="ic-tag-inner"
     >
-      五个字标签
+      我是标签最多七个字
     </span>
-    <mock-icon
-      className="ic-tag-icon"
-      onClick={[Function]}
-      size={15}
-      type="close_small"
-    />
+  </div>,
+  <div
+    className="ic-tag ic-tag-wrapper"
+    onClose={[Function]}
+    style={
+      Object {
+        "background": "RGB(59,153,255,0.08)",
+        "color": "#3B99FF",
+      }
+    }
+  >
+    <span
+      className="ic-tag-inner"
+    >
+      我三字
+    </span>
+  </div>,
+  <div
+    className="ic-tag ic-tag-wrapper"
+    onClose={[Function]}
+    style={
+      Object {
+        "background": "RGB(252,51,51,0.08)",
+        "color": "#FC3333",
+      }
+    }
+  >
+    <span
+      className="ic-tag-inner"
+    >
+      我是四字
+    </span>
   </div>,
   <div
     className="ic-tag ic-tag-wrapper"
@@ -37,14 +63,36 @@ Array [
     <span
       className="ic-tag-inner"
     >
-      五个字标签
+      我是五个字
     </span>
   </div>,
 ]
 `;
 
-exports[`four 1`] = `
+exports[`筛选标签 1`] = `
 Array [
+  <div
+    className="ic-tag ic-tag-wrapper ic-close-tag"
+    onClose={[Function]}
+    style={
+      Object {
+        "background": "RGB(255,160,0,0.08)",
+        "color": "#ffa000",
+      }
+    }
+  >
+    <span
+      className="ic-tag-inner"
+    >
+      我是标签最多七个字
+    </span>
+    <mock-icon
+      className="ic-tag-icon"
+      onClick={[Function]}
+      size={15}
+      type="close_small"
+    />
+  </div>,
   <div
     className="ic-tag ic-tag-wrapper ic-close-tag"
     onClose={[Function]}
@@ -58,7 +106,7 @@ Array [
     <span
       className="ic-tag-inner"
     >
-      四字标签
+      我三字
     </span>
     <mock-icon
       className="ic-tag-icon"
@@ -67,27 +115,6 @@ Array [
       type="close_small"
     />
   </div>,
-  <div
-    className="ic-tag ic-tag-wrapper"
-    onClose={[Function]}
-    style={
-      Object {
-        "background": "RGB(255,160,0,0.08)",
-        "color": "#ffa000",
-      }
-    }
-  >
-    <span
-      className="ic-tag-inner"
-    >
-      四字标签
-    </span>
-  </div>,
-]
-`;
-
-exports[`less than four 1`] = `
-Array [
   <div
     className="ic-tag ic-tag-wrapper ic-close-tag"
     onClose={[Function]}
@@ -101,7 +128,7 @@ Array [
     <span
       className="ic-tag-inner"
     >
-      四以下
+      我是四字
     </span>
     <mock-icon
       className="ic-tag-icon"
@@ -110,27 +137,6 @@ Array [
       type="close_small"
     />
   </div>,
-  <div
-    className="ic-tag ic-tag-wrapper"
-    onClose={[Function]}
-    style={
-      Object {
-        "background": "RGB(255,160,0,0.08)",
-        "color": "#ffa000",
-      }
-    }
-  >
-    <span
-      className="ic-tag-inner"
-    >
-      四以下
-    </span>
-  </div>,
-]
-`;
-
-exports[`more than seven 1`] = `
-Array [
   <div
     className="ic-tag ic-tag-wrapper ic-close-tag"
     onClose={[Function]}
@@ -144,7 +150,7 @@ Array [
     <span
       className="ic-tag-inner"
     >
-      我是大于七个字的可关闭标签
+      我是五个字
     </span>
     <mock-icon
       className="ic-tag-icon"
@@ -152,22 +158,6 @@ Array [
       size={15}
       type="close_small"
     />
-  </div>,
-  <div
-    className="ic-tag ic-tag-wrapper"
-    onClose={[Function]}
-    style={
-      Object {
-        "background": "RGB(255,160,0,0.08)",
-        "color": "#ffa000",
-      }
-    }
-  >
-    <span
-      className="ic-tag-inner"
-    >
-      我是大于七个字的关键词标签
-    </span>
   </div>,
 ]
 `;

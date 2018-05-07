@@ -44,7 +44,7 @@ export default class IcIcon extends PureComponent {
                 className={newClassName}
                 style={newStyle}
             >
-                <use xlinkHref={`#icon-${type}`}></use>
+                <use xlinkHref={`#icon-color-${type}`}></use>
             </svg>
         ) : (
             <i

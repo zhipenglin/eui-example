@@ -92,7 +92,7 @@ var IcIcon = function (_PureComponent) {
                     className: newClassName,
                     style: newStyle
                 }),
-                _react2.default.createElement('use', { xlinkHref: '#icon-' + type })
+                _react2.default.createElement('use', { xlinkHref: '#icon-color-' + type })
             ) : _react2.default.createElement('i', (0, _extends3.default)({}, other, {
                 style: newStyle,
                 className: newClassName

@@ -1,6 +1,6 @@
 {
   "name": "ic-tag",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "tag component for ifchange",
   "main": "dist/index.js",
   "scripts": {
@@ -10,6 +10,6 @@
   "license": "ISC",
   "devDependencies": {
     "classnames": "^2.2.5",
-    "ic-iconfont": "^0.0.12"
+    "ic-iconfont": "^0.0.13"
   }
 }
