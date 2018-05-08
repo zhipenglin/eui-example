@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">57.14% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>12/21</span>
+        <span class='fraction'>21/21</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>8/12</span>
+        <span class='fraction'>12/12</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/4</span>
+        <span class='fraction'>4/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">60% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>12/20</span>
+        <span class='fraction'>20/20</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -133,16 +133,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
@@ -151,7 +151,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -171,16 +171,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -207,16 +207,16 @@ import IcIcon from 'ic-iconfont'
 import './style.scss'
 &nbsp;
 function colorToRgba(tagColor) {
-    <span class="missing-if-branch" title="if path not taken" >I</span>if(!tagColor) <span class="cstat-no" title="statement not covered" >return;</span>
+    if(!tagColor) return;
     let color = tagColor.toLowerCase();
     let reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
-    <span class="missing-if-branch" title="else path not taken" >E</span>if(color &amp;&amp; reg.test(color)){
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (color.length === 4) {
-            let newColor = <span class="cstat-no" title="statement not covered" >"#";</span>
-<span class="cstat-no" title="statement not covered" >            for (let i=1; i&lt;4; i+=1) {</span>
-<span class="cstat-no" title="statement not covered" >                newColor += color.slice(i, i+1).concat(color.slice(i, i+1));</span>
+    if(color &amp;&amp; reg.test(color)){
+        if (color.length === 4) {
+            let newColor = "#";
+            for (let i=1; i&lt;4; i+=1) {
+                newColor += color.slice(i, i+1).concat(color.slice(i, i+1));
             }
-<span class="cstat-no" title="statement not covered" >            color = newColor;</span>
+            color = newColor;
         }
         //处理六位的颜色值
         let changeColor = [];
@@ -225,7 +225,7 @@ function colorToRgba(tagColor) {
         }
         return "RGB(" + changeColor.join(",") + ",0.08)";
     }
-<span class="cstat-no" title="statement not covered" >    return color;</span>
+    return color;
 }
 &nbsp;
 &nbsp;
@@ -235,7 +235,7 @@ class icBasicTag extends PureComponent {
     }
     static defaultProps={
         closable:false,
-        onClose:<span class="fstat-no" title="function not covered" >()</span>=&gt;{},
+        onClose:()=&gt;{},
         color:'#FFA000'
     };
     static propTypes={
@@ -244,12 +244,12 @@ class icBasicTag extends PureComponent {
         style:PropTypes.object,
         color:PropTypes.string
     };
-    handleTagClose = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-        const {onClose} = <span class="cstat-no" title="statement not covered" >this.props;</span>
-<span class="cstat-no" title="statement not covered" >        this.setState({</span>
+    handleTagClose = () =&gt; {
+        const {onClose} = this.props;
+        this.setState({
             showTag: false
         });
-<span class="cstat-no" title="statement not covered" >        onClose();</span>
+        onClose();
     }
     render() {
         const {className,closable,color,children,style,...args} = this.props;
@@ -259,7 +259,7 @@ class icBasicTag extends PureComponent {
                 {this.state.showTag?&lt;div {...args} className={classnames("ic-tag",className,{"ic-close-tag":closable})} style={{background:newColor,color:color,...style}}&gt;
                     &lt;span className="ic-tag-inner"&gt;{children}&lt;/span&gt;
                     {closable?&lt;IcIcon className="ic-tag-icon" type="close_small" size={15}  onClick={this.handleTagClose}&gt;&lt;/IcIcon&gt;:null}
-                &lt;/div&gt;:<span class="branch-1 cbranch-no" title="branch not covered" >null}</span>
+                &lt;/div&gt;:null}
             &lt;/Fragment&gt;
         );
     }
@@ -274,7 +274,7 @@ export default icBasicTag
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue May 08 2018 17:15:42 GMT+0800 (CST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue May 08 2018 18:28:22 GMT+0800 (CST)
 </div>
 </div>
 <script src="../../prettify.js"></script>
