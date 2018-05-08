@@ -1,17 +1,17 @@
 const fs = require('fs-extra'),
     path = require('path'),
     ejs = require('ejs'),
-    install=require('npm-install-package'),
-    hyperquest = require('hyperquest'), unpack = require('tar-pack').unpack;
+    install = require('npm-install-package'),
+    hyperquest = require('hyperquest');
 
 const init = async () => {
     const config = JSON.parse(await fs.readFile(path.resolve(__dirname, './components.json'), 'utf8'));
-    await Promise.all(config.map(({name}) => download(name)));
+    await download(config.map((item) => item.name));
     const componentFile = ejs.render(await fs.readFile(path.resolve(__dirname, './template.ejs'), 'utf8'), {data: config});
     await fs.writeFile(path.resolve(__dirname, '../src/componentArray.js'), componentFile);
 };
 
-const download = async (name) => {
+const download = async (list) => {
     const getUrl = async (name) => {
         return new Promise((resolve, reject) => {
             let data = '';
@@ -23,21 +23,23 @@ const download = async (name) => {
         }).then((config) => {
             config = JSON.parse(config);
             const last = config['dist-tags']['latest'], package = config['versions'][last];
-            return {url:package['dist']['tarball'],last};
+            return {url: package['dist']['tarball'], name, last};
         });
     };
-    const {url,last} = await getUrl(name);
-    await new Promise((resolve,reject)=>{
-        install(`${name}@${last}`,{ saveDev: true, cache: true },(err)=>{
-            if(err) reject(err);
+
+    const infoList = await Promise.all(list.map(async (name) => await getUrl(name)));
+
+    console.log(`running npm install ${infoList.map(({name, last}) => `${name}@${last}`).join(' ')} ...`);
+    await new Promise((resolve, reject) => {
+        install(infoList.map(({name, last}) => `${name}@${last}`), {saveDev: true, cache: false}, (err) => {
+            if (err) reject(err);
             resolve();
         });
     });
-    return new Promise((resolve, reject) => {
-        hyperquest(url).pipe(unpack(path.resolve(__dirname, `../src/packages/${name}`))).on('close', () => {
-            resolve();
-        }).on('error', (e) => reject(e));
-    });
+    console.log('copy packages to src ...');
+    await Promise.all(infoList.map(async ({name}) => {
+        return await fs.copy(path.resolve(__dirname, `../node_modules/${name}/`), path.resolve(__dirname, `../src/packages/${name}/`));
+    }));
 };
 
 init().then(() => {

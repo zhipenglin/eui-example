@@ -10,6 +10,8 @@ export default class extends Component{
                 {componentArray.map(({name,title})=><div key={name}>
                     <NavLink to={`/components/${name}`} activeClassName="active">{title} {name}</NavLink>
                 </div>)}
+                <div className="App-menu__hr"/>
+                <NavLink to="/report" activeClassName="active">单元测试报告</NavLink>
             </div>
         </div>
     }

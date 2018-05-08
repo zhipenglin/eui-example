@@ -5,6 +5,14 @@
   },
   {
     "name": "ic-iconfont",
-    "title": "ICON"
+    "title": "图标"
+  },
+  {
+    "name": "ic-button",
+    "title": "按钮"
+  },
+  {
+    "name": "ic-avatar",
+    "title": "默认头像"
   }
 ]

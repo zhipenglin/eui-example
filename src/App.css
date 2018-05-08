@@ -49,6 +49,11 @@
   font-size: large;
 }
 
+.App .report{
+  width: 100%;
+  min-height: 500px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -94,4 +99,11 @@
 }
 .App-menu__list{
   padding: 15px;
+}
+
+.App-menu__hr{
+  background:#ccc;
+  height: 1px;
+  width: 100%;
+  margin: 5px 0;
 }

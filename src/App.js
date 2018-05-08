@@ -5,6 +5,7 @@ import componentArray from './componentArray'
 import Markdown from 'ic-markdown'
 import {HashRouter, Route, Redirect,Switch} from 'react-router-dom'
 import LeftMenu from './LeftMenu'
+import Report from './Report'
 
 class App extends Component {
     render() {
@@ -21,9 +22,10 @@ class App extends Component {
                             {componentArray.map(({name, title, ExampleComponent, ReadMe}) => <Route
                                 path={`/components/${name}`} exact key={name} render={() => <div>
                                 <Markdown>{ReadMe}</Markdown>
-                                <h3>Example</h3>
+                                <h3>示例</h3>
                                 <ExampleComponent/>
                             </div>}/>)}
+                            <Route path="/report" component={Report}/>
                             <Redirect to={`/components/${componentArray[0].name}`}/>
                         </Switch>
                     </div>
