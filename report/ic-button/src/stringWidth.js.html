@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ic-button/src/stringWidth.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">ic-button/src</a> stringWidth.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">76% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>19/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">46.3% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>25/54</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">75% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>18/24</span>
+      </div>
+    </div>
+    <p class="quiet">
+      Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+    </p>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">80x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">80x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">80x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">80x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">80x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">80x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">80x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">80x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const isFullwidthCodePoint = x =&gt; {
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (Number.isNaN(x)) {
+<span class="cstat-no" title="statement not covered" >    return false</span>
+  }
+  // Code points are derived from:
+  // http://www.unix.org/Public/UNIDATA/EastAsianWidth.txt
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (
+    x &gt;= 0x1100 &amp;&amp; (
+      x &lt;= 0x115F || // Hangul Jamo
+      x === 0x2329 || // LEFT-POINTING ANGLE BRACKET
+      x === 0x232A || // RIGHT-POINTING ANGLE BRACKET
+      // CJK Radicals Supplement .. Enclosed CJK Letters and Months
+      (x &gt;= 0x2E80 &amp;&amp; x &lt;= 0x3247 &amp;&amp; <span class="branch-6 cbranch-no" title="branch not covered" >x !== 0x303F)</span> ||
+      // Enclosed CJK Letters and Months .. CJK Unified Ideographs Extension A
+      (x &gt;= 0x3250 &amp;&amp; x &lt;= 0x4DBF) ||
+      // CJK Unified Ideographs .. Yi Radicals
+      (x &gt;= 0x4E00 &amp;&amp; x &lt;= 0xA4C6) ||
+      // Hangul Jamo Extended-A
+      (<span class="branch-11 cbranch-no" title="branch not covered" >x &gt;= 0xA960 </span>&amp;&amp; <span class="branch-12 cbranch-no" title="branch not covered" >x &lt;= 0xA97C)</span> ||
+      // Hangul Syllables
+      (<span class="branch-13 cbranch-no" title="branch not covered" >x &gt;= 0xAC00 </span>&amp;&amp; <span class="branch-14 cbranch-no" title="branch not covered" >x &lt;= 0xD7A3)</span> ||
+      // CJK Compatibility Ideographs
+      (<span class="branch-15 cbranch-no" title="branch not covered" >x &gt;= 0xF900 </span>&amp;&amp; <span class="branch-16 cbranch-no" title="branch not covered" >x &lt;= 0xFAFF)</span> ||
+      // Vertical Forms
+      (<span class="branch-17 cbranch-no" title="branch not covered" >x &gt;= 0xFE10 </span>&amp;&amp; <span class="branch-18 cbranch-no" title="branch not covered" >x &lt;= 0xFE19)</span> ||
+      // CJK Compatibility Forms .. Small Form Variants
+      (<span class="branch-19 cbranch-no" title="branch not covered" >x &gt;= 0xFE30 </span>&amp;&amp; <span class="branch-20 cbranch-no" title="branch not covered" >x &lt;= 0xFE6B)</span> ||
+      // Halfwidth and Fullwidth Forms
+      (<span class="branch-21 cbranch-no" title="branch not covered" >x &gt;= 0xFF01 </span>&amp;&amp; <span class="branch-22 cbranch-no" title="branch not covered" >x &lt;= 0xFF60)</span> ||
+      (<span class="branch-23 cbranch-no" title="branch not covered" >x &gt;= 0xFFE0 </span>&amp;&amp; <span class="branch-24 cbranch-no" title="branch not covered" >x &lt;= 0xFFE6)</span> ||
+      // Kana Supplement
+      (<span class="branch-25 cbranch-no" title="branch not covered" >x &gt;= 0x1B000 </span>&amp;&amp; <span class="branch-26 cbranch-no" title="branch not covered" >x &lt;= 0x1B001)</span> ||
+      // Enclosed Ideographic Supplement
+      (<span class="branch-27 cbranch-no" title="branch not covered" >x &gt;= 0x1F200 </span>&amp;&amp; <span class="branch-28 cbranch-no" title="branch not covered" >x &lt;= 0x1F251)</span> ||
+      // CJK Unified Ideographs Extension B .. Tertiary Ideographic Plane
+      (<span class="branch-29 cbranch-no" title="branch not covered" >x &gt;= 0x20000 </span>&amp;&amp; <span class="branch-30 cbranch-no" title="branch not covered" >x &lt;= 0x3FFFD)</span>
+    )
+  ) {
+    return true
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return false</span>
+}
+const ansiRegex = () =&gt; {
+  const pattern = [
+    '[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:[a-zA-Z\\d]*(?:;[a-zA-Z\\d]*)*)?\\u0007)',
+    '(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PRZcf-ntqry=&gt;&lt;~]))'
+  ].join('|')
+  return new RegExp(pattern, 'g')
+}
+const stripAnsi = input =&gt; typeof input === 'string' ? input.replace(ansiRegex(), '') : <span class="branch-1 cbranch-no" title="branch not covered" >input</span>
+export default str =&gt; {
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof str !== 'string' || str.length === 0) {
+<span class="cstat-no" title="statement not covered" >    return 0</span>
+  }
+&nbsp;
+  str = stripAnsi(str)
+&nbsp;
+  let width = 0
+&nbsp;
+  for (let i = 0; i &lt; str.length; i++) {
+    const code = str.codePointAt(i)
+&nbsp;
+    // Ignore control characters
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (code &lt;= 0x1F || (code &gt;= 0x7F &amp;&amp; code &lt;= 0x9F)) {
+<span class="cstat-no" title="statement not covered" >      continue</span>
+    }
+&nbsp;
+    // Ignore combining characters
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (code &gt;= 0x300 &amp;&amp; code &lt;= 0x36F) {
+<span class="cstat-no" title="statement not covered" >      continue</span>
+    }
+&nbsp;
+    // Surrogates
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (code &gt; 0xFFFF) {
+<span class="cstat-no" title="statement not covered" >      i++</span>
+    }
+&nbsp;
+    width += isFullwidthCodePoint(code) ? 2 : <span class="branch-1 cbranch-no" title="branch not covered" >1</span>
+  }
+&nbsp;
+  return width
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue May 08 2018 13:24:48 GMT+0800 (CST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+<script src="../../block-navigation.js"></script>
+</body>
+</html>
