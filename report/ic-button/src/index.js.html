@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">93.33% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>14/15</span>
+        <span class='fraction'>15/15</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">93.75% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>15/16</span>
+        <span class='fraction'>17/17</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>4/5</span>
+        <span class='fraction'>5/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">93.33% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>14/15</span>
+        <span class='fraction'>15/15</span>
       </div>
     </div>
     <p class="quiet">
@@ -120,7 +120,8 @@
 <a name='L72'></a><a href='#L72'>72</a>
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -136,8 +137,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -148,19 +149,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -168,8 +169,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -224,12 +226,12 @@ class Button extends PureComponent {
   componentWillMount() {
     this.fixedWidthHandler(this.props)
   }
-<span class="fstat-no" title="function not covered" >  co</span>mponentWillReceiveProps(nextProps) {
-<span class="cstat-no" title="statement not covered" >    this.fixedWidthHandler(nextProps)</span>
+  componentWillReceiveProps(nextProps) {
+    this.fixedWidthHandler(nextProps)
   }
   // 小于等于一定中文字符时定宽,两个英文字符算一个中文。有icon属性算两个字符。
   fixedWidthHandler(props) {
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof (props.children) === 'string') {
+    if (typeof (props.children) === 'string') {
       let textLimit = 8 - (props.icon ? 2 : 0)
       let textLimitOfLarge = 10 - (props.icon ? 2 : 0)
       let computedTextLimit = props.size === 'large' ? textLimitOfLarge : textLimit
@@ -246,11 +248,12 @@ class Button extends PureComponent {
     return (
       &lt;button
         {...omit(props, ['onClick', 'loading', 'size', 'type', 'icon'])}
-        onClick={!props.disabled &amp;&amp; this.props.onClick ? this.props.onClick : null}
+        onClick={!props.disabled &amp;&amp; !props.loading &amp;&amp; props.onClick ? props.onClick : null}
         className={classnames(prefix, {
           [`${prefix}-fixedWidth`]: state.isFixedWidth,
           [`${prefix}-${props.type}`]: props.type,
-          [`${prefix}-${props.size}`]: props.size
+          [`${prefix}-${props.size}`]: props.size,
+          [`${prefix}-loading`]: props.loading
         })}
       &gt;
         {props.icon ? &lt;Icon type={props.icon} /&gt; : null}&lt;span&gt;{props.children}&lt;/span&gt;
@@ -274,7 +277,7 @@ export default Button
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue May 08 2018 18:28:22 GMT+0800 (CST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed May 09 2018 17:37:28 GMT+0800 (CST)
 </div>
 </div>
 <script src="../../prettify.js"></script>
