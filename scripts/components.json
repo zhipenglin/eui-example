@@ -14,5 +14,9 @@
   {
     "name": "ic-avatar",
     "title": "默认头像"
+  },
+  {
+    "name":"ic-switch",
+    "title":"开关"
   }
 ]

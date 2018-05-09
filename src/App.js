@@ -6,7 +6,6 @@ import Markdown from 'ic-markdown'
 import {HashRouter, Route, Redirect,Switch} from 'react-router-dom'
 import LeftMenu from './LeftMenu'
 import Report from './Report'
-
 class App extends Component {
     render() {
         return (

@@ -1,11 +1,6 @@
+const rewireMd=require('./react-app-rewire-md'),rewireSass=require('./react-app-rewire-sass');
 module.exports = function override(config, env) {
-    config.module.rules.forEach((item)=>{
-        if(Array.isArray(item.oneOf)){
-            item.oneOf.splice(0,0,{
-                test:/\.md$/,
-                use:'raw-loader'
-            });
-        }
-    });
+    config=rewireMd(config,env);
+    config=rewireSass(config,env);
     return config;
 }
