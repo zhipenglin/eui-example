@@ -12,6 +12,8 @@ function createRewireSass(sassLoaderOptions = {}) {
             return loaderNameMatches(rule, "file-loader") && rule.exclude;
         });
 
+        fileLoader.exclude.push(sassExtension);
+
         const createRule = (rule, cssRules) => {
             if (env === "production") {
                 return {
