@@ -20,7 +20,7 @@ function createRewireSass(sassLoaderOptions = {}) {
                     ...rule,
                     loader: [
                         ...cssRules.loader,
-                        { loader: "sass-loader", options: lessLoaderOptions },
+                        { loader: "sass-loader", options: sassLoaderOptions },
                     ],
                 };
             } else {
