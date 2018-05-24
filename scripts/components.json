@@ -1,22 +1,26 @@
 [
   {
-    "name": "ic-tag",
+    "name": "@eui/ic-tag",
     "title": "标签"
   },
   {
-    "name": "ic-iconfont",
+    "name": "@eui\/ic-iconfont",
     "title": "图标"
   },
   {
-    "name": "ic-button",
+    "name": "@eui/ic-button",
     "title": "按钮"
   },
   {
-    "name": "ic-avatar",
+    "name": "@eui/ic-avatar",
     "title": "默认头像"
   },
   {
-    "name":"ic-switch",
-    "title":"开关"
+    "name": "@eui/ic-switch",
+    "title": "开关"
+  },
+  {
+    "name":"@eui/ic-tooltip",
+    "title":"气泡"
   }
 ]

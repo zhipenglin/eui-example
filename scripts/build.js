@@ -12,7 +12,8 @@ const init = async () => {
 };
 
 const download = async (list) => {
-    const getUrl = async (name) => {
+    /*const getUrl = async (name) => {
+        console.log(name);
         return new Promise((resolve, reject) => {
             let data = '';
             hyperquest(`http://192.168.1.97:4870/${name}`).on('data', (chunk) => {
@@ -25,9 +26,8 @@ const download = async (list) => {
             const last = config['dist-tags']['latest'], package = config['versions'][last];
             return {url: package['dist']['tarball'], name, last};
         });
-    };
-
-    const infoList = await Promise.all(list.map(async (name) => await getUrl(name)));
+    };*/
+    const infoList = await Promise.all(list.map((name) => ({name,last:'latest'})));
 
     console.log(`running npm install ${infoList.map(({name, last}) => `${name}@${last}`).join(' ')} ...`);
     await new Promise((resolve, reject) => {
