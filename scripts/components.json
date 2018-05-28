@@ -20,7 +20,35 @@
     "title": "开关"
   },
   {
-    "name":"@eui/ic-tooltip",
-    "title":"气泡"
+    "name": "@eui/ic-tooltip",
+    "title": "气泡"
+  },
+  {
+    "name": "@eui/ic-radio",
+    "title": " 单选"
+  },
+  {
+    "name": "@eui/ic-checkbox",
+    "title": "多选"
+  },
+  {
+    "name": "@eui/ic-popup",
+    "title": "弹窗"
+  },
+  {
+    "name": "@eui/ic-empty",
+    "title": "空状态"
+  },
+  {
+    "name": "@eui/ic-loading",
+    "title": "加载中"
+  },
+  {
+    "name": "@eui/ic-input",
+    "title": "输入框"
+  },
+  {
+    "name":"@eui/ic-range-input",
+    "title": "范围框"
   }
 ]

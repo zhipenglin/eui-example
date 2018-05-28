@@ -11,6 +11,6 @@ module.exports = {
         'jsx'
     ],
     'moduleNameMapper': {
-        '\\.(css|scss)$': 'identity-obj-proxy'
+        '\\.(css|scss|svg|png)$': 'identity-obj-proxy'
     }
 }
