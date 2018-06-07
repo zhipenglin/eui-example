@@ -22,6 +22,7 @@ const download = async (list) => {
         });
     });
     console.log('copy packages to src ...');
+    await fs.remove('../src/packages/');
     await Promise.all(infoList.map(async ({name}) => {
         return await fs.copy(path.resolve(__dirname, `../node_modules/${name}/`), path.resolve(__dirname, `../src/packages/${name}/`));
     }));
