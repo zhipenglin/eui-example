@@ -25,14 +25,14 @@
         <span class='fraction'>16/16</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">85.71% </span>
+        <span class="strong">95.83% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>12/14</span>
+        <span class='fraction'>23/24</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">75% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>4/5</span>
+        <span class='fraction'>3/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -119,7 +119,10 @@
 <a name='L71'></a><a href='#L71'>71</a>
 <a name='L72'></a><a href='#L72'>72</a>
 <a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -142,17 +145,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -167,8 +163,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -201,58 +205,60 @@ import React, {PureComponent} from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import './index.scss';
+import Icon from '@eui/ic-iconfont';
 &nbsp;
 const prefix = 'eui-switch';
+&nbsp;
 class Switch extends PureComponent {
     static defaultProps = {
-        defaultChecked: true,
-        checked: true,
         disabled: false,
+        size: 'default',
         onChange: <span class="fstat-no" title="function not covered" >()</span> =&gt; {
         }
     };
 &nbsp;
     constructor(props) {
         super(props);
+        this.isControlled = props.checked != null;
         this.state = {
-            checked: props.defaultChecked !== undefined ? props.defaultChecked : <span class="branch-1 cbranch-no" title="branch not covered" >props.checked</span>
+            checked: this.isControlled ? props.checked || <span class="branch-1 cbranch-no" title="branch not covered" >false </span>: props.defaultChecked || false
         }
-        this.handlerClick = this.handlerClick.bind(this);
+        this.handlerChange = this.handlerChange.bind(this);
     }
 &nbsp;
-    componentWillReceiveProps(newProps) {
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (newProps.checked !== this.props.checked) {
-            this.setState({
-                checked: newProps.checked
-            });
-        }
-    }
-&nbsp;
-    handlerClick() {
-        const {onChange, disabled} = this.props;
+    handlerChange(e) {
+        const {onChange, disabled, loading} = this.props;
         const {checked} = this.state;
 &nbsp;
-        if (disabled) return;
+        if (disabled || loading) return;
         this.setState({checked: !checked});
-        onChange(!checked);
+        onChange(e, !checked);
     };
 &nbsp;
     render() {
-        const {checked} = this.state,
-            {checkedLabel, uncheckedLabel, disabled, ...others} = this.props;
+        const {checkedLabel, uncheckedLabel, disabled, size, checked: checkedProp, onChange, loading, className, ...others} = this.props;
+        const isSmall = size === 'small';
+        const checked = this.isControlled ? checkedProp : this.state.checked;
 &nbsp;
         return (
             &lt;span className={classnames(prefix, {
                 [prefix + '-checked']: checked,
-                [prefix + '-disabled']: disabled
+                [prefix + '-disabled']: disabled,
+                [prefix + '-small']: isSmall,
+                [prefix + '-loading']: loading,
+                [className]: className
             })}
-                  onClick={this.handlerClick}
                   {...others}
             &gt;
-                &lt;span className={`${prefix}-bar`}&gt;&lt;/span&gt;
-                &lt;span className={`${prefix}-slider`}&gt;&lt;/span&gt;
-                {checked &amp;&amp; checkedLabel ? &lt;span className={`${prefix}-label`}&gt;{checkedLabel}&lt;/span&gt; : null}
-                {!checked &amp;&amp; uncheckedLabel ? &lt;span className={`${prefix}-label`}&gt;{uncheckedLabel}&lt;/span&gt; : null}
+                &lt;span className={`${prefix}-inner`}&gt;
+                    &lt;span className={`${prefix}-slider`}&gt;
+                        &lt;span className={`${prefix}-loading-icon`}&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                &lt;/span&gt;
+                {!loading &amp;&amp; !isSmall &amp;&amp; checked &amp;&amp; checkedLabel ? &lt;span className={`${prefix}-label`}&gt;{checkedLabel}&lt;/span&gt; : null}
+                {!loading &amp;&amp; !isSmall &amp;&amp; !checked &amp;&amp; uncheckedLabel ?
+                    &lt;span className={`${prefix}-label`}&gt;{uncheckedLabel}&lt;/span&gt; : null}
+                &lt;input type="checkbox" onChange={this.handlerChange} checked={checked}/&gt;
             &lt;/span&gt;
         );
     }
@@ -271,7 +277,7 @@ export default Switch;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jun 12 2018 10:32:38 GMT+0800 (CST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Jul 12 2018 20:33:32 GMT+0800 (CST)
 </div>
 </div>
 <script src="../../prettify.js"></script>

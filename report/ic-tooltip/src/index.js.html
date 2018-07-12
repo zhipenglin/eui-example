@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">51.35% </span>
+        <span class="strong">55.88% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>19/37</span>
+        <span class='fraction'>19/34</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">30% </span>
+        <span class="strong">60% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>3/10</span>
+        <span class='fraction'>9/15</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">30.77% </span>
+        <span class="strong">33.33% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>4/13</span>
+        <span class='fraction'>3/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">52.78% </span>
+        <span class="strong">57.58% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>19/36</span>
+        <span class='fraction'>19/33</span>
       </div>
     </div>
     <p class="quiet">
@@ -181,12 +181,7 @@
 <a name='L133'></a><a href='#L133'>133</a>
 <a name='L134'></a><a href='#L134'>134</a>
 <a name='L135'></a><a href='#L135'>135</a>
-<a name='L136'></a><a href='#L136'>136</a>
-<a name='L137'></a><a href='#L137'>137</a>
-<a name='L138'></a><a href='#L138'>138</a>
-<a name='L139'></a><a href='#L139'>139</a>
-<a name='L140'></a><a href='#L140'>140</a>
-<a name='L141'></a><a href='#L141'>141</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L136'></a><a href='#L136'>136</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -204,6 +199,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -237,8 +233,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -275,21 +269,13 @@
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -309,7 +295,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -343,6 +333,7 @@ const prefix = 'eui-tooltip';
 class Tooltip extends PureComponent {
     constructor(props) {
         super(props);
+        this.isControlled = props.visible != null;
         this.state = {
             show: false,
             isFirstRender: true,
@@ -364,10 +355,8 @@ class Tooltip extends PureComponent {
     };
 &nbsp;
     static propTypes = {
-        title: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.element
-        ]).isRequired,
+        title: PropTypes.node.isRequired,
+        children: PropTypes.node.isRequired,
         placement: PropTypes.string,
         wrapperClass: PropTypes.string,
         autoAdjustOverflow: PropTypes.bool,
@@ -388,13 +377,13 @@ class Tooltip extends PureComponent {
             width,
             height
         };
-    }
+    };
     _showTitle = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
         const {show} = <span class="cstat-no" title="statement not covered" >this.state;</span>
         const {mouseEnterDelay} = <span class="cstat-no" title="statement not covered" >this.props;</span>
 <span class="cstat-no" title="statement not covered" >        clearTimeout(this.timer);</span>
 <span class="cstat-no" title="statement not covered" >        if (show) <span class="cstat-no" title="statement not covered" >return;</span></span>
-<span class="cstat-no" title="statement not covered" >        this.timer=setTimeout(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.timer = setTimeout(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            this.setState({</span>
                 show: true,
                 isFirstRender: false // 组件挂载时只渲染子组件，不渲染气泡（因为此时还不能获得子组件的位置数据）。当用户触发了显示气泡的事件时才渲染气泡。
@@ -404,7 +393,7 @@ class Tooltip extends PureComponent {
     _hideTitle = <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
         const {mouseLeaveDelay} = <span class="cstat-no" title="statement not covered" >this.props;</span>
 <span class="cstat-no" title="statement not covered" >        clearTimeout(this.timer);</span>
-<span class="cstat-no" title="statement not covered" >        this.timer=setTimeout(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.timer = setTimeout(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            this.setState({show: false});</span>
         }, mouseLeaveDelay * 1000);
     };
@@ -414,42 +403,38 @@ class Tooltip extends PureComponent {
             hideTitle = this._hideTitle,
             _this = this;
         const triggerMap = {
-            hover: () =&gt; {
-                return {
-                    onMouseEnter: showTitle,
-                    onMouseLeave: hideTitle
-                }
+            hover: {
+                onMouseEnter: showTitle,
+                onMouseLeave: hideTitle
             },
-            focus: <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >                return {</span>
-                    onFocus: showTitle,
-                    onBlur: hideTitle
-                }
+            focus: {
+                onFocus: showTitle,
+                onBlur: hideTitle
             },
-            click: <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >                return {</span>
-                    onClick: <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >                        _this.state.show ? hideTitle() : showTitle();</span>
-                    }
-                }
+            click: {
+                onClick: _this.state.show ? <span class="branch-0 cbranch-no" title="branch not covered" >hideTitle </span>: showTitle
             }
         };
         <span class="missing-if-branch" title="else path not taken" >E</span>if (trigger in triggerMap) {
-            return triggerMap[trigger]();
+            return triggerMap[trigger];
         }
 &nbsp;
     };
 &nbsp;
     render() {
         const {show, isFirstRender} = this.state,
-            {children, title, trigger, mouseEnterDelay, mouseLeaveDelay, ...others} = this.props; // 此处用不到的props也罗列于此，是为了防止它们作为props传递到子组件
+            {children, title, trigger, mouseEnterDelay, mouseLeaveDelay, visible, onVisibleChange, ...others} = this.props;
         const onlyOneChild = React.Children.count(children) === 1;
         const triggerFn = this._trigger();
         const childProps = Object.assign({}, {
             ref: this.child,
-            className: classnames({[prefix + "-open"]: show})
+            className: classnames({
+                [children &amp;&amp; children.props &amp;&amp; children.props.className]: onlyOneChild &amp;&amp; children.props.className,
+                [prefix + "-open"]: show
+            }) // 此处需要将className传递下去
         }, triggerFn);
         const child = onlyOneChild ? React.cloneElement(children, childProps) : <span class="branch-1 cbranch-no" title="branch not covered" >&lt;span {...childProps}&gt;{children}&lt;/span&gt;;</span>
+&nbsp;
         return (
             &lt;Fragment&gt;
                 {child}
@@ -472,7 +457,7 @@ export default Tooltip;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jun 12 2018 10:32:38 GMT+0800 (CST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Jul 12 2018 20:33:32 GMT+0800 (CST)
 </div>
 </div>
 <script src="../../prettify.js"></script>
